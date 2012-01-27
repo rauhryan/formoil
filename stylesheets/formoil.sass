@@ -1,4 +1,4 @@
-@import 'reset.css'
+//@import 'reset.css'
 @import 'scss/grid.scss'
 
 //////////
@@ -16,12 +16,23 @@ $total-width: 100%
 .wrapper 
   max-width: 960px
   margin: 0 auto
+  width: 98%
 
 form
   .alpha
     margin-left: 0
   .omega
     margin-right: 0
+  label
+    > input, > select, > textarea
+      &:focus
+        outline: 0
+        border-color: rgba(82, 168, 236, 0.8)
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6)
+    > input[type="file"], > input[type="checkbox"], > select
+      &:focus
+        box-shadow: none
+        outline: 1px dotted #666
 
 form 
   .row
@@ -36,16 +47,18 @@ form
     label
       @include clearfix()
       display: block
+      padding: 4px
       padding-top: 6px
       overflow: hidden
-      span
+      
+      > span
         font-size: 13px
         line-height: 18px
         text-align: right
         color: #404040
         float: left
         cursor: pointer
-      input,select,textarea
+      > input, > select, > textarea
         float: left
         border: 1px solid #ccc
         border-radius: 3px
@@ -64,10 +77,10 @@ form
     .grid_6
       @include column(6,12)
       label
-        input,select,textarea
+        > input, > select, > textarea
           width: 77%
           margin: 0 1%
-        span
+        > span
           width: 20.5%
     .grid_8
       @include column(8,12)
@@ -87,14 +100,14 @@ form
         &.omega
           margin-right: 0
         label
-          input,select,textarea
+          > input, > select, > textarea
             width: 77%
             margin: 0 1%
           span
             width: 20.5%
 
       label
-        input, select, textarea
+        > input, > select, > textarea
           margin: 0 0.5%
           width: 88.8%
         span
@@ -108,7 +121,7 @@ form.stacked
       padding-top: 6px
       overflow: hidden
       margin: 0 5px
-      span
+      > span
         font-size: 13px
         line-height: 20px
         text-align: left
@@ -116,7 +129,7 @@ form.stacked
         cursor: pointer
         float: none
         display: block
-      input,select,textarea
+      > input, > select, > textarea
         float: none
         border: 1px solid #ccc
         border-radius: 3px
@@ -144,10 +157,10 @@ form.stacked
         width: 30.55%
         margin: 0 2.083%
       label
-        input,select,textarea
+        > input, > select, > textarea
           width: 99%
           margin: 0
-        span
+        > span
           width: auto 
     .grid_8
       @include column(8,12)
@@ -160,10 +173,10 @@ form.stacked
     .grid_12
       @include column(12,12)
       label
-        input, select, textarea
+        > input, > select, > textarea
           margin: 0 
-          width: 99.6%
-        span
+          width: 98.8%
+        > span
           width: auto
 
 
