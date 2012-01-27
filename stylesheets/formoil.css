@@ -1,4 +1,3 @@
-@import url(reset.css);
 body {
   width: 100%;
   *zoom: 1; }
@@ -10,12 +9,20 @@ body {
 
 .wrapper {
   max-width: 960px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 98%; }
 
 form .alpha {
   margin-left: 0; }
 form .omega {
   margin-right: 0; }
+form label > input:focus, form label > select:focus, form label > textarea:focus {
+  outline: 0;
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6); }
+form label > input[type="file"]:focus, form label > input[type="checkbox"]:focus, form label > select:focus {
+  box-shadow: none;
+  outline: 1px dotted #666666; }
 
 form .row {
   display: block;
@@ -33,6 +40,7 @@ form .row {
   form .row label {
     *zoom: 1;
     display: block;
+    padding: 4px;
     padding-top: 6px;
     overflow: hidden; }
     form .row label:before, form .row label:after {
@@ -40,14 +48,14 @@ form .row {
       display: table; }
     form .row label:after {
       clear: both; }
-    form .row label span {
+    form .row label > span {
       font-size: 13px;
       line-height: 18px;
       text-align: right;
       color: #404040;
       float: left;
       cursor: pointer; }
-    form .row label input, form .row label select, form .row label textarea {
+    form .row label > input, form .row label > select, form .row label > textarea {
       float: left;
       border: 1px solid #cccccc;
       border-radius: 3px;
@@ -57,81 +65,36 @@ form .row {
     display: table; }
   form .row:after {
     clear: both; }
-  form .row .grid_1 {
-    display: inline;
-    float: left;
-    width: 6.25%;
-    margin: 0 1.042%; }
-  form .row .grid_2 {
-    display: inline;
-    float: left;
-    width: 14.583%;
-    margin: 0 1.042%; }
-  form .row .grid_3 {
-    display: inline;
-    float: left;
-    width: 22.917%;
-    margin: 0 1.042%; }
-  form .row .grid_4 {
-    display: inline;
-    float: left;
-    width: 31.25%;
-    margin: 0 1.042%; }
-  form .row .grid_5 {
-    display: inline;
-    float: left;
-    width: 39.583%;
-    margin: 0 1.042%; }
-  form .row .grid_6 {
+  form .row .half {
     display: inline;
     float: left;
     width: 47.917%;
     margin: 0 1.042%; }
-    form .row .grid_6 label input, form .row .grid_6 label select, form .row .grid_6 label textarea {
+    form .row .half label > input, form .row .half label > select, form .row .half label > textarea {
       width: 77%;
       margin: 0 1%; }
-    form .row .grid_6 label span {
+    form .row .half label > span {
       width: 20.5%; }
-  form .row .grid_8 {
-    display: inline;
-    float: left;
-    width: 64.583%;
-    margin: 0 1.042%; }
-  form .row .grid_9 {
-    display: inline;
-    float: left;
-    width: 72.917%;
-    margin: 0 1.042%; }
-  form .row .grid_10 {
-    display: inline;
-    float: left;
-    width: 81.25%;
-    margin: 0 1.042%; }
-  form .row .grid_11 {
-    display: inline;
-    float: left;
-    width: 89.583%;
-    margin: 0 1.042%; }
-  form .row .grid_12 {
+  form .row .full {
     display: inline;
     float: left;
     width: 97.917%;
     margin: 0 1.042%; }
-    form .row .grid_12 .grid_12 {
+    form .row .full .full {
       margin: 0; }
-    form .row .grid_12 .grid_6.alpha {
+    form .row .full .half.alpha {
       margin-left: 0; }
-    form .row .grid_12 .grid_6.omega {
+    form .row .full .half.omega {
       margin-right: 0; }
-    form .row .grid_12 .grid_6 label input, form .row .grid_12 .grid_6 label select, form .row .grid_12 .grid_6 label textarea {
+    form .row .full .half label > input, form .row .full .half label > select, form .row .full .half label > textarea {
       width: 77%;
       margin: 0 1%; }
-    form .row .grid_12 .grid_6 label span {
+    form .row .full .half label span {
       width: 20.5%; }
-    form .row .grid_12 label input, form .row .grid_12 label select, form .row .grid_12 label textarea {
+    form .row .full label > input, form .row .full label > select, form .row .full label > textarea {
       margin: 0 0.5%;
       width: 88.3%; }
-    form .row .grid_12 label span {
+    form .row .full label span {
       width: 10%; }
 
 form.stacked .row {
@@ -150,7 +113,7 @@ form.stacked .row {
       display: table; }
     form.stacked .row label:after {
       clear: both; }
-    form.stacked .row label span {
+    form.stacked .row label > span {
       font-size: 13px;
       line-height: 20px;
       text-align: left;
@@ -158,7 +121,7 @@ form.stacked .row {
       cursor: pointer;
       float: none;
       display: block; }
-    form.stacked .row label input, form.stacked .row label select, form.stacked .row label textarea {
+    form.stacked .row label > input, form.stacked .row label > select, form.stacked .row label > textarea {
       float: none;
       border: 1px solid #cccccc;
       border-radius: 3px;
@@ -168,77 +131,63 @@ form.stacked .row {
     display: table; }
   form.stacked .row:after {
     clear: both; }
-  form.stacked .row .grid_1 {
-    display: inline;
-    float: left;
-    width: 6.25%;
-    margin: 0 1.042%; }
-  form.stacked .row .grid_2 {
-    display: inline;
-    float: left;
-    width: 14.583%;
-    margin: 0 1.042%; }
-  form.stacked .row .grid_3 {
-    display: inline;
-    float: left;
-    width: 22.917%;
-    margin: 0 1.042%; }
-  form.stacked .row .grid_4 {
+  form.stacked .row .third {
     display: inline;
     float: left;
     width: 31.25%;
     margin: 0 1.042%; }
-  form.stacked .row .grid_5 {
-    display: inline;
-    float: left;
-    width: 39.583%;
-    margin: 0 1.042%; }
-  form.stacked .row .grid_6 {
+    form.stacked .row .third label > input, form.stacked .row .third label > select, form.stacked .row .third label > textarea {
+      width: 99%;
+      margin: 0; }
+    form.stacked .row .third label > span {
+      width: auto; }
+  form.stacked .row .half {
     display: inline;
     float: left;
     width: 47.917%;
     margin: 0 1.042%; }
-    form.stacked .row .grid_6 .grid_2 {
+    form.stacked .row .half .third {
       display: inline;
       float: left;
       width: 30.55%;
       margin: 0 2.083%; }
-      form.stacked .row .grid_6 .grid_2.alpha {
+      form.stacked .row .half .third.alpha {
         margin-left: 0; }
-      form.stacked .row .grid_6 .grid_2.omega {
+      form.stacked .row .half .third.omega {
         margin-right: 0; }
-    form.stacked .row .grid_6 label input, form.stacked .row .grid_6 label select, form.stacked .row .grid_6 label textarea {
+    form.stacked .row .half .two-thirds {
+      margin: 0 2.25%; }
+      form.stacked .row .half .two-thirds.alpha {
+        margin-left: 0; }
+      form.stacked .row .half .two-thirds.omega {
+        margin-right: 0; }
+      form.stacked .row .half .two-thirds label > input, form.stacked .row .half .two-thirds label > select, form.stacked .row .half .two-thirds label > textarea {
+        width: 100%;
+        margin: 0; }
+      form.stacked .row .half .two-thirds label > span {
+        width: auto; }
+    form.stacked .row .half label > input, form.stacked .row .half label > select, form.stacked .row .half label > textarea {
       width: 99%;
       margin: 0; }
-    form.stacked .row .grid_6 label span {
+    form.stacked .row .half label > span {
       width: auto; }
-  form.stacked .row .grid_8 {
+  form.stacked .row .two-thirds {
     display: inline;
     float: left;
     width: 64.583%;
     margin: 0 1.042%; }
-  form.stacked .row .grid_9 {
-    display: inline;
-    float: left;
-    width: 72.917%;
-    margin: 0 1.042%; }
-  form.stacked .row .grid_10 {
-    display: inline;
-    float: left;
-    width: 81.25%;
-    margin: 0 1.042%; }
-  form.stacked .row .grid_11 {
-    display: inline;
-    float: left;
-    width: 89.583%;
-    margin: 0 1.042%; }
-  form.stacked .row .grid_12 {
+    form.stacked .row .two-thirds label > input, form.stacked .row .two-thirds label > select, form.stacked .row .two-thirds label > textarea {
+      width: 99%;
+      margin: 0; }
+    form.stacked .row .two-thirds label > span {
+      width: auto; }
+  form.stacked .row .full {
     display: inline;
     float: left;
     width: 97.917%;
     margin: 0 1.042%; }
-    form.stacked .row .grid_12 label input, form.stacked .row .grid_12 label select, form.stacked .row .grid_12 label textarea {
+    form.stacked .row .full label > input, form.stacked .row .full label > select, form.stacked .row .full label > textarea {
       margin: 0;
-      width: 99.6%; }
-    form.stacked .row .grid_12 label span {
+      width: 98.8%; }
+    form.stacked .row .full label > span {
       width: auto; }

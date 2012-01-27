@@ -64,17 +64,7 @@ form
         border-radius: 3px
         padding: 4px
     @include row(12)
-    .grid_1
-      @include column(1,12)
-    .grid_2
-      @include column(2,12)
-    .grid_3
-      @include column(3,12)
-    .grid_4
-      @include column(4,12)
-    .grid_5
-      @include column(5,12)
-    .grid_6
+    .half
       @include column(6,12)
       label
         > input, > select, > textarea
@@ -82,19 +72,11 @@ form
           margin: 0 1%
         > span
           width: 20.5%
-    .grid_8
-      @include column(8,12)
-    .grid_9
-      @include column(9,12)
-    .grid_10
-      @include column(10,12)
-    .grid_11
-      @include column(11,12)
-    .grid_12
+    .full
       @include column(12,12)
-      .grid_12
+      .full
         margin: 0
-      .grid_6
+      .half
         &.alpha
           margin-left: 0
         &.omega
@@ -135,19 +117,17 @@ form.stacked
         border-radius: 3px
         padding: 4px
     @include row(12)
-    .grid_1 
-      @include column(1,12)
-    .grid_2
-      @include column(2,12)
-    .grid_3
-      @include column(3,12)
-    .grid_4
+    .third
       @include column(4,12)
-    .grid_5
-      @include column(5,12)
-    .grid_6
+      label
+        > input, > select, > textarea
+          width: 99%
+          margin: 0
+        > span
+          width: auto 
+    .half
       @include column(6,12)
-      .grid_2
+      .third
         &.alpha
           margin-left: 0
         &.omega
@@ -156,25 +136,37 @@ form.stacked
         float: left
         width: 30.55%
         margin: 0 2.083%
+      .two-thirds
+        &.alpha
+          margin-left: 0
+        &.omega
+          margin-right: 0
+        margin: 0 2.25%
+        label
+          > input, > select, > textarea
+            width: 100%
+            margin: 0
+          > span
+            width: auto 
       label
         > input, > select, > textarea
           width: 99%
           margin: 0
         > span
           width: auto 
-    .grid_8
+    .two-thirds
       @include column(8,12)
-    .grid_9
-      @include column(9,12)
-    .grid_10
-      @include column(10,12)
-    .grid_11
-      @include column(11,12)
-    .grid_12
+      label
+        > input, > select, > textarea
+          width: 99%
+          margin: 0
+        > span
+          width: auto 
+    .full
       @include column(12,12)
       label
         > input, > select, > textarea
-          margin: 0 
+          margin: 0
           width: 98.8%
         > span
           width: auto
