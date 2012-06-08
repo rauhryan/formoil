@@ -4,3 +4,5 @@ source "http://rubygems.org"
 # gem "rails"
 gem "compass"
 gem "simpleserve"
+gem "bourbon"
+

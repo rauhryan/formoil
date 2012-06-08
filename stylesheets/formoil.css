@@ -21,14 +21,10 @@ form label > input:focus, form label > select:focus, form label > textarea:focus
   border-color: rgba(82, 168, 236, 0.8);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
-  -ms-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
-  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6); }
 form label > input[type="file"]:focus, form label > input[type="checkbox"]:focus, form label > select:focus {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  -ms-box-shadow: none;
-  -o-box-shadow: none;
   box-shadow: none;
   outline: 1px dotted #666666; }
 
@@ -36,8 +32,9 @@ form .row {
   display: block;
   width: 102.083%;
   margin: 0 -1.042%;
-  *zoom: 1; }
+  zoom: 1; }
   form .row fieldset {
+    overflow: hidden;
     border: 1px solid #cccccc;
     padding: 10px 0;
     border-radius: 4px;
@@ -46,7 +43,7 @@ form .row {
       padding: 0 10px;
       margin-left: 20px; }
   form .row label {
-    *zoom: 1;
+    zoom: 1;
     display: block;
     padding: 4px;
     padding-top: 6px;
@@ -68,8 +65,6 @@ form .row {
       border: 1px solid #cccccc;
       -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
       border-radius: 3px;
       padding: 4px; }
   form .row:before, form .row:after {
@@ -105,7 +100,7 @@ form .row {
       width: 20.5%; }
     form .row .full label > input, form .row .full label > select, form .row .full label > textarea {
       margin: 0 0.5%;
-      width: 88.3%; }
+      width: 88.2%; }
     form .row .full label span {
       width: 10%; }
 
@@ -113,9 +108,9 @@ form.stacked .row {
   display: block;
   width: 102.083%;
   margin: 0 -1.042%;
-  *zoom: 1; }
+  zoom: 1; }
   form.stacked .row label {
-    *zoom: 1;
+    zoom: 1;
     display: block;
     padding-top: 6px;
     overflow: hidden;
@@ -138,8 +133,6 @@ form.stacked .row {
       border: 1px solid #cccccc;
       -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
       border-radius: 3px;
       padding: 4px; }
   form.stacked .row:before, form.stacked .row:after {
